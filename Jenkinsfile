@@ -19,5 +19,11 @@ pipeline {
       	sh 'docker build -t spring-petclinic:latest .'
       }
     }
+    stage('Docker Compose') {
+       agent any
+      steps {
+      sh 'docker-compose up -d'
+   }   
   }
+ }
 }
